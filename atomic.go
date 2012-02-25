@@ -35,3 +35,7 @@ func (a *AtomicValue) Get() interface{} {
     defer a.lock.RUnlock()
     return a.Value
 }
+
+func (a *AtomicValue) GetBool() bool {
+	return a.Get().(bool)
+}
